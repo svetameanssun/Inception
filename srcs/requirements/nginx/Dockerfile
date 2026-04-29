@@ -6,10 +6,10 @@ RUN apt-get update &&\
 
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 
-COPY tools/nginx.sh /ngnix.sh
+COPY tools/nginx.sh /nginx.sh
 
-RUN chmod +x /ngnix.sh
+RUN chmod +x /nginx.sh
 
-ENTRYPOINT ["/ngnix.sh"]
+ENTRYPOINT ["/nginx.sh"]
 
 CMD ["nginx", "-g", "daemon off;"]
