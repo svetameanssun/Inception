@@ -1,16 +1,17 @@
 #!/bin/bash
 
-mysql_safe &
+mysqld_safe &
 
+#service mariadb start
 sleep 5
 
-mysql -e "CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE};"
-mysql -e "CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';"
-mysql -e "GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO '${MYSQL_USER}'@'%';"
+mysql -e "CREATE DATABASE IF NOT EXISTS ${SQL_DATABASE};"
+mysql -e "CREATE USER IF NOT EXISTS '${SQL_USER}'@'%' IDENTIFIED BY '${SQL_PASSWORD}';"
+mysql -e "GRANT ALL PRIVILEGES ON ${SQL_DATABASE}.* TO '${SQL_USER}'@'%';"
 mysql -e "FLUSH PRIVILEGES;"
 
 
 mysqladmin shutdown
 
-mysql_safe
-
+mysqld_safe
+# mariadb -u root

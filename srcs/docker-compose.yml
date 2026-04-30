@@ -21,6 +21,7 @@ services:
     env_file: .env
     ports:
       - "9000:9000"
+    #entrypoint: ["tail", "-f", "/dev/null"]
     depends_on:
       - mariadb
     networks:

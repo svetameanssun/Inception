@@ -1,10 +1,10 @@
 FROM debian:12
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y mariadb-server mariadb-client galera-4
 
-RUN apt-get install -y mariadb-server
+#RUN mkdir -p /run/mysql && chown -R mysql:mysql /run/mysql && chmod 777 /run/mysql
 
-COPY conf/mydb.cnf  /etc/mysql/mariadb.conf.d/mydb.cnf
+COPY conf/my.cnf  /etc/mysql/mariadb.conf.d/my.cnf
 
 COPY tools/mydb.sh /mydb.sh
 

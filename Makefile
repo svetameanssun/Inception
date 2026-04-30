@@ -13,7 +13,7 @@ all: up
 # Start containers
 up: hosts
 	@mkdir -p /home/stitovsk/data/mariadb /home/stitovsk/data/wordpress
-	@chmod -R 777 /home/stitovsk/data
+	@sudo chmod -R 777 /home/stitovsk/data
 	@docker compose -f srcs/docker-compose.yml up --build -d
 
 # Ensure /etc/hosts contains the necessary domain mapping
@@ -41,7 +41,7 @@ clean: down
 fclean: down
 	@docker system prune -af
 	@docker volume rm $$(docker volume ls -q) 2>/dev/null || true
-	@rm -rf /home/stitovsk/data
+	@sudo rm -rf /home/stitovsk/data
 	@echo "All is cleaned!"
 
 # Rebuild from scratch
