@@ -2,7 +2,7 @@
 
 # Wait for MariaDB to be ready
 echo "Waiting MariaDB..."
-while ! mariadb -h mariadb -u "${SQL_USER}" -p${SQL_PASSWORD} -e "SELECT 1" > /dev/null 2>&1; do
+while ! mariadb -h mariadb -u "${MYSQL_USER}" -p${MYSQL_PASSWORD} -e "SELECT 1" > /dev/null 2>&1; do
     sleep 2
 done
 echo "MariaDB is ready!"
@@ -16,9 +16,9 @@ echo "MariaDB is ready!"
     
     echo "Configuring WordPress..."
     wp config create \
-        --dbname=${SQL_DATABASE} \
-        --dbuser=${SQL_USER} \
-        --dbpass=${SQL_PASSWORD} \
+        --dbname=${MYSQL_DATABASE} \
+        --dbuser=${MYSQL_USER} \
+        --dbpass=${MYSQL_PASSWORD} \
         --dbhost=mariadb \
         --allow-root
 

@@ -34,17 +34,17 @@ ENV_FILE=".env"
 
 # Name for the database
 read -p "Enter SQL database name: (default: my_database) " SQL_DATABASE
-SQL_DATABASE=${SQL_DATABASE:-my_database}
+MYSQL_DATABASE=${MYSQL_DATABASE:-my_database}
 
 # User for SQL
-read -p "Enter SQL user: (default: $INCEPTION_USER) " SQL_USER
-SQL_USER=${SQL_USER:-$INCEPTION_USER}
+read -p "Enter SQL user: (default: $INCEPTION_USER) " MYSQL_USER
+MYSQL_USER=${MYSQL_USER:-$INCEPTION_USER}
 
 # Password for SQL
-SQL_PASSWORD=$(prompt_with_loop "Enter SQL password: ")
+MYSQL_PASSWORD=$(prompt_with_loop "Enter SQL password: ")
 
 # Root password for SQL
-SQL_ROOT_PASSWORD=$(prompt_with_loop "Enter SQL root password: ")
+MYSQL_ROOT_PASSWORD=$(prompt_with_loop "Enter SQL root password: ")
 
 # Title for the wordpress's site
 read -p "Enter WordPress title (default: $INCEPTION_USER): " WP_TITLE
@@ -80,10 +80,10 @@ FTP_USER=${FTP_USER:-$INCEPTION_USER}
 FTP_PASSWORD=$(prompt_with_loop "Enter ftp_server password: ")
 
 cat <<EOL > $ENV_FILE
-SQL_DATABASE=$SQL_DATABASE
-SQL_USER=$SQL_USER
-SQL_PASSWORD=$SQL_PASSWORD
-SQL_ROOT_PASSWORD=$SQL_ROOT_PASSWORD
+MYSQL_DATABASE=$MYSQL_DATABASE
+MYSQL_USER=$MYSQL_USER
+MYSQL_PASSWORD=$MYSQL_PASSWORD
+MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
 WP_URL=$WP_URL
 WP_TITLE=$WP_TITLE
 WP_ADMIN_USR=$WP_ADMIN_USR
