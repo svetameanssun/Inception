@@ -6,7 +6,7 @@ services:
       - .env
     ports:
       - "443:443"
-      - "80:80"
+      - "8080:8080"
     volumes:
       - wordpress_data:/var/www/html
     depends_on:
@@ -19,8 +19,8 @@ services:
     container_name: wordpress
     build: ./requirements/wordpress
     env_file: .env
-    ports:
-      - "9000:9000"
+    expose:
+      - "9000"
     #entrypoint: ["tail", "-f", "/dev/null"]
     depends_on:
       - mariadb
@@ -38,8 +38,8 @@ services:
       - mariadb_data:/var/lib/mysql
     networks:
       - inception
-    ports:
-      - "3306:3306"
+    expose:
+      - "3306"
     restart: unless-stopped
 
 networks:
