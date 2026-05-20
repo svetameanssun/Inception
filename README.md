@@ -23,7 +23,7 @@ This project has a few requirements in order to deploy it:
 
 * To download it, just clone the repository into the folder of your choice
 * A Makefile is provided with the "docker compose" commands to run it. Either use the docker compose commands, or use the make features provided in the file. Running "make" will execute "build" and "up" commands from docker compose.
-* A few requirements are needed before running the "make" command. Because sensitive information is not uploaded into the git repository, this information is stored in the local VM outside the repository. We will first need to copy the files ".env" and server.crt / server.key (in the proper folder) into the project, then execute the make or docker compose commands. 
+* A few requirements are needed before running the "make" command. Because sensitive information is not uploaded into the git repository, this information is stored in the local VM outside the repository. We will first need to create the file ".env" using create. 
 * Once it is deployed and running, we can access the the Wordpress site through the Nginx server through our preferred web browser, using the URL  https://stitovsk.42.fr
 
 

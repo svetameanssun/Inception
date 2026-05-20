@@ -33,29 +33,11 @@
 git clone <repository_url> inception && cd inception
 ```
 
-* Then, create the .env file in the srcs/ folder and edit values as needed
-* Create a folder for the ssl certificates:
+* Then, create the .env file executin ./create_env.sh
 
-```bash
-mkdir -p ./requirements/nginx/tools/ssl/certs
-mkdir -p ./requirements/nginx/tools/ssl/private
-```
-
-* Generate a ssl key:
-
-```bash
-openssl req -x509 -nodes -days 365 \
--newkey rsa:2048 \
--keyout server.key \
--out server.crt \
--subj "/C=ES/ST=Malaga/L=Malaga/O=42/OU=42/CN=stitovsk.42.fr"
-```
-and store them in the folders aforementioned (server.key into the private folder, and server.crt into the cert folder)
- 
 ---
 
 ## Build and Run
-
 
 ### Build containers
 
