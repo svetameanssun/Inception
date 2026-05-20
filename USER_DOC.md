@@ -42,7 +42,7 @@ make restart
 Open a browser and go to:
 
 ```text
-https://regea-go.42.fr
+https://stitovsk.42.fr
 ```
 
 ---
@@ -50,7 +50,7 @@ https://regea-go.42.fr
 ## Access the Admin Panel
 
 ```text
-https://regea-go.42.fr/wp-admin
+https://stitovsk.42.fr/wp-admin
 ```
 
 ---
