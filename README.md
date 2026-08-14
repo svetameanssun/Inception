@@ -46,20 +46,29 @@ This project introduces the fundamentals of **containerization** and **Infrastru
 
 ```text
 .
+├── DEV_DOC.md
 ├── Makefile
-└── srcs/
-    ├── .env
-    ├── docker-compose.yml
-    └── requirements/
-        ├── mariadb/
-        │   ├── Dockerfile
-        │   ├── conf/
-        │   └── tools/
-        ├── nginx/
-        │   ├── Dockerfile
-        │   ├── conf/
-        │   └── tools/
-        └── wordpress/
-            ├── Dockerfile
-            ├── conf/
-            └── tools/
+├── srcs
+│   ├── create_env.sh
+│   ├── docker-compose.yml
+│   └── requirements
+│       ├── mariadb
+│       │   ├── conf
+│       │   │   └── my.cnf
+│       │   ├── Dockerfile
+│       │   └── tools
+│       │       └── mydb.sh
+│       ├── nginx
+│       │   ├── conf
+│       │   │   └── nginx.conf
+│       │   ├── Dockerfile
+│       │   └── tools
+│       │       └── nginx.sh
+│       └── wordpress
+│           ├── conf
+│           │   └── www.conf
+│           ├── Dockerfile
+│           └── tools
+│               └── wp.sh
+└── USER_DOC.md
+```
